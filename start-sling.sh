@@ -1,5 +1,5 @@
 #!/bin/bash -eu
-
+# Remember to make this scrip executable by running command chmod +x start-sling.sh
 # Function to start Apache Sling in the background
 start_sling() {
     # Start Apache Sling Launcher as a background process and redirect output to /dev/null
