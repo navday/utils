@@ -3,7 +3,9 @@
 # Function to gracefully stop Apache Sling
 stop_sling() {
     # Find the PID of the Java process running Apache Sling Launcher
-    PID=$(ps -ef | grep java | grep "org.apache.sling.feature.launcher.jar" | awk '{print $2}')
+    PID=$(pgrep -f "org.apache.sling.feature.launcher")
+    # PID=$(ps -ef | grep java | grep "org.apache.sling.feature.launcher" | awk '{print $2}')
+    echo PID=$PID
 
     if [ -z "$PID" ]; then
         echo "Apache Sling Launcher is not running."
